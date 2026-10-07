@@ -45,6 +45,10 @@ io.on('connection', (socket) => {
     });
 });
 
+app.get('/ping', (req, res) => {
+    res.status(200).send('Awake');
+});
+
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Signaling server is running on port ${PORT}`);
